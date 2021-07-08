@@ -6,6 +6,7 @@ package mocks
 
 import (
 	reflect "reflect"
+	time "time"
 
 	gomock "github.com/golang/mock/gomock"
 )
@@ -45,4 +46,18 @@ func (m *MockFoo) Do(arg0 int) int {
 func (mr *MockFooMockRecorder) Do(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Do", reflect.TypeOf((*MockFoo)(nil).Do), arg0)
+}
+
+// Do2 mocks base method.
+func (m *MockFoo) Do2(arg0 *time.Time) []int {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Do2", arg0)
+	ret0, _ := ret[0].([]int)
+	return ret0
+}
+
+// Do2 indicates an expected call of Do2.
+func (mr *MockFooMockRecorder) Do2(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Do2", reflect.TypeOf((*MockFoo)(nil).Do2), arg0)
 }

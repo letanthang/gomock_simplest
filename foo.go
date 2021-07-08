@@ -13,4 +13,7 @@ type Foo interface {
 func Bar(f Foo) {
 	result := f.Do(123)
 	fmt.Println(result)
+	// t := time.Now()
+	// f.Do2(&t)
+	f.Do2(nil)
 }
