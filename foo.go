@@ -1,9 +1,13 @@
 package foo
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 type Foo interface {
 	Do(int) int
+	Do2(*time.Time) []int
 }
 
 func Bar(f Foo) {
