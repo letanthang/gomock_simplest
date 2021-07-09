@@ -15,6 +15,7 @@ func TestFoo(t *testing.T) {
 	m.EXPECT().Do(123).Return(101)
 	// m.EXPECT().Do(gomock.Any()).Return(101)
 	m.EXPECT().Do2(gomock.Nil())
+	//m.EXPECT().Do2(gomock.Nil()).Return(gomock.Len(5))
 
 	Bar(m)
 }

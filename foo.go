@@ -15,5 +15,8 @@ func Bar(f Foo) {
 	fmt.Println(result)
 	// t := time.Now()
 	// f.Do2(&t)
-	f.Do2(nil)
+	intSlice := f.Do2(nil)
+	if len(intSlice) == 5 {
+		fmt.Println("yes")
+	}
 }
